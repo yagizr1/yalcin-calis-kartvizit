@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erkan Azman - Dijital Kartvizit</title>
+    <!-- Font Awesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b131e;
+            color: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: #132235;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            border: 1px solid #1e3a5f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Üst kısımdaki yeşil-mavi dekoratif ışık efekti */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 120px;
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+            filter: blur(50px);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 18%;
+            border: 3px solid #10b981;
+            padding: 3px;
+            background-color: #132235;
+        }
+
+        .name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 0.95rem;
+            color: #14b8a6;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        /* Tek tıkla rehbere kaydet butonu */
+        .save-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(135deg, #10b981, #0891b2);
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25 ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+            margin-bottom: 28px;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+            opacity: 0.95;
+        }
+
+        .save-btn:active {
+            transform: translateY(0);
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background-color: #0d1929;
+            padding: 13px 18px;
+            border-radius: 12px;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.92rem;
+            border: 1px solid #1e293b;
+            transition: all 0.2s ease;
+        }
+
+        .link-item:hover {
+            background-color: #162a45;
+            border-color: #10b981;
+            transform: translateX(3px);
+        }
+
+        .link-item i {
+            font-size: 1.15rem;
+            color: #14b8a6;
+            width: 22px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="avatar-container">
+            <img src="profile.png" alt="Erkan Azman" class="avatar">
+        </div>
+        
+        <h1 class="name">Erkan Azman</h1>
+        <div class="title">Sakarya Rizeliler Dernek Başkanı</div>
+
+        <!-- Rehbere Kaydet Butonu -->
+        <button class="save-btn" onclick="downloadVCard()">
+            <i class="fa-solid fa-user-plus"></i> Rehbere Kaydet
+        </button>
+
+        <!-- İletişim Bilgileri ve Sosyal Medya -->
+        <div class="links-container">
+            <a href="tel:+90 538 854 48 78" class="link-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+90 538 854 48 78</span>
+            </a>
+            <a href="mailto:erkan@example.com" class="link-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>ekolaz@hotmail.com</span>
+            </a>
+            <a href="https://example.com" target="_blank" class="link-item">
+                <i class="fa-solid fa-globe"></i>
+                <span>www.sakaryarizelilerderneği.com</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="link-item">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@erkanazman</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="link-item">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>linkedin.com/erkanazman</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function downloadVCard() {
+            // vCard metin içeriği
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Azman;Erkan;;;
+FN:Erkan Azman
+ORG:Sakarya Rizeliler Derneği
+TITLE:Sakarya Rizeliler Dernek Başkanı
+TEL;TYPE=CELL:+905388544878
+EMAIL;TYPE=INTERNET:ekolaz@hotmail.com
+URL:sakaryarizelilerdernegi.com
+END:VCARD`;
+
+            // .vcf dosyası oluşturma ve indirme
+            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Erkan_Azman.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
