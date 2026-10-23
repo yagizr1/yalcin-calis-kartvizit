@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erkan Azman - Dijital Kartvizit</title>
+    <title>nfcshopping54 - Yalçın Çalış</title>
     <!-- Font Awesome İkonları -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -152,11 +152,11 @@
 
     <div class="card">
         <div class="avatar-container">
-            <img src="profile.png" alt="Erkan Azman" class="avatar">
+            <img src="profile.jpg" alt="Yalçın Çalış" class="avatar">
         </div>
         
-        <h1 class="name">Erkan Azman</h1>
-        <div class="title">Sakarya Rizeliler Dernek Başkanı</div>
+        <h1 class="name">Yalçın Çalış</h1>
+        <div class="title">Enna Güzellik Salonu</div>
 
         <!-- Rehbere Kaydet Butonu -->
         <button class="save-btn" onclick="downloadVCard()">
@@ -165,25 +165,25 @@
 
         <!-- İletişim Bilgileri ve Sosyal Medya -->
         <div class="links-container">
-            <a href="tel:+90 538 854 48 78" class="link-item">
+            <a href="tel:+905325540190" class="link-item">
                 <i class="fa-solid fa-phone"></i>
-                <span>+90 538 854 48 78</span>
+                <span>0532 554 01 90</span>
             </a>
-            <a href="mailto:erkan@example.com" class="link-item">
+            <a href="mailto:yalcincalis@outlook.com" class="link-item">
                 <i class="fa-solid fa-envelope"></i>
-                <span>ekolaz@hotmail.com</span>
+                <span>yalcincalis@outlook.com</span>
             </a>
-            <a href="https://example.com" target="_blank" class="link-item">
-                <i class="fa-solid fa-globe"></i>
-                <span>www.sakaryarizelilerderneği.com</span>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="link-item">
+            <a href="https://www.instagram.com/yemihmersan" target="_blank" class="link-item">
                 <i class="fa-brands fa-instagram"></i>
-                <span>@erkanazman</span>
+                <span>@yemihmersan</span>
             </a>
-            <a href="https://linkedin.com" target="_blank" class="link-item">
-                <i class="fa-brands fa-linkedin-in"></i>
-                <span>linkedin.com/erkanazman</span>
+            <a href="https://www.instagram.com/ennaerkekbakim" target="_blank" class="link-item">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@ennaerkekbakim</span>
+            </a>
+            <a href="https://www.instagram.com/ennaguzelliksalonu" target="_blank" class="link-item">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@ennaguzelliksalonu</span>
             </a>
         </div>
     </div>
@@ -193,13 +193,12 @@
             // vCard metin içeriği
             const vCardData = `BEGIN:VCARD
 VERSION:3.0
-N:Azman;Erkan;;;
-FN:Erkan Azman
-ORG:Sakarya Rizeliler Derneği
-TITLE:Sakarya Rizeliler Dernek Başkanı
-TEL;TYPE=CELL:+905388544878
-EMAIL;TYPE=INTERNET:ekolaz@hotmail.com
-URL:sakaryarizelilerdernegi.com
+N:Çalış;Yalçın;;;
+FN:Yalçın Çalış
+ORG:Enna Güzellik Salonu
+TEL;TYPE=CELL:+905325540190
+EMAIL;TYPE=INTERNET:yalcincalis@outlook.com
+URL:https://www.instagram.com/ennaguzelliksalonu
 END:VCARD`;
 
             // .vcf dosyası oluşturma ve indirme
@@ -208,7 +207,7 @@ END:VCARD`;
             
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'Erkan_Azman.vcf');
+            link.setAttribute('download', 'Yalcin_Calis.vcf');
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
